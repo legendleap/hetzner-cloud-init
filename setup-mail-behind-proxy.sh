@@ -62,8 +62,8 @@ ufw allow from 10.1.0.0/16
 ufw -f default deny incoming
 ufw -f default allow outgoing
 
- cat <<EOF >> /etc/crontab
- * * * * * root /usr/local/bin/update-config.sh --hcloud-token ${TOKEN} --whitelisted-ips ${WHITELIST_S} ${FLOATING_IPS}
- EOF
+cat <<EOF >> /etc/crontab
+* * * * * root /usr/local/bin/update-config.sh --hcloud-token ${TOKEN} --whitelisted-ips ${WHITELIST_S} ${FLOATING_IPS}
+EOF
 
 /usr/local/bin/update-config.sh --hcloud-token ${TOKEN} --whitelisted-ips ${WHITELIST_S} ${FLOATING_IPS}
